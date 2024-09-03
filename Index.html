@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/estilo_1.css">
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="fomularios">
+        <form id="form1" action="conexion.php" method="post">
+            <input type="text" placeholder="Email" name="ema">
+            <input type="text" placeholder="Contraseña" name="pass">
+            <button type="submit" name="sesion">Iniciar Sesion</button>
+            <button type="button" onclick="mostrar2()">Crear cuenta</button>
+        </form>
+        
+            <form id="form2" class="oculto" action="alta.php" method="post">
+                <input type="text" placeholder="Ingrese nombre" name="nom1">
+                <input type="text" placeholder="Ingrese apellido" name="ape1">
+                <input type="text" placeholder="Email" name="ema">
+                <button type="submit" name="agre">Crear cuenta</button>
+                <button type="button" onclick="mostrar2()">Cancelar</button>
+            </form>
+    <script src="javas.js"></script>
+</body>
+</html>
