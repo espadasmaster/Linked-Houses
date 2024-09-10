@@ -13,19 +13,30 @@ session_start();
 include_once 'cn.php';
 
 elegir($conexdb);
+
 function elegir($conexdb){
     if(isset($_POST['sesion'])){
         sesionar($conexdb);
     }
+    // if(isset($_POST['agre'])){
+    //     agregar($cdb);
+    // }
 }
 
 function sesionar($conexdb){
     $email = $_POST['ema'];
     $pass = $_POST['pass'];
-    $consulta= mysqli_query($conexdb, "SELECT nick FROM usuarios WHERE email='$email' AND contra= '$pass'");
 
-    if(mysqli_num_rows($consulta) > 0) {
-        $_SESSION['nick'] = $email;
+   $consulta = "SELECT nick FROM usuarios WHERE email='$email' AND contra= '$pass'";
+
+    $consultaCompleta= mysqli_query($conexdb, $consulta);
+
+    $coname= $conexdb->query($consulta);
+
+    $name = $coname ? $coname->fetch_assoc()['nick'] : null;
+
+    if(mysqli_num_rows($consultaCompleta) > 0) {
+        $_SESSION['apodo'] = $name;
         header ("location: inicio.php");
         exit();
     }else{
@@ -36,9 +47,9 @@ function sesionar($conexdb){
             </script>';
             exit();
     }
-
+   
 }
-
+mysqli_close($conexdb);
 ?>
     
 </body>
