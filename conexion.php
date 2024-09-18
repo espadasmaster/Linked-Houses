@@ -21,11 +21,14 @@ function elegir($conexdb){
     // if(isset($_POST['agre'])){
     //     agregar($cdb);
     // }
+    
 }
 
 function sesionar($conexdb){
     $email = $_POST['ema'];
     $pass = $_POST['pass'];
+
+    
 
    $consulta = "SELECT nick FROM usuarios WHERE email='$email' AND contra= '$pass'";
 
