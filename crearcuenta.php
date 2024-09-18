@@ -18,8 +18,9 @@ if(!empty($_POST["Registrar"])){
         $DNI=$_POST["DNI"];
         $Nombre=$_POST["Nombre"];
         $Apellido=$_POST["Apellido"];
-        $Email=$_POST["Email"];
+        $Usuario=$_POST["Usuario"];
         $Contraseña=$_POST["Contraseña"]; 
+        $Mail=$_POST["Mail"];
     }
 }
 
