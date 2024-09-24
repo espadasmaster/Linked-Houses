@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo/estilo_1.css">
-    <title>Inicio</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="fomularios">
-        
-        <form id="form1" action="conexion.php" method="post">
+    <section class="background">
+        <div class="contenedor">
+            <div class="formulario">
+                <form action="#">
+                    <h2>Login</h2>
 
-            <input type="text" placeholder="Email" name="ema">
-            <input type="text" placeholder="Contraseña" name="pass">
-            
-            <button type="submit" name="sesion">Iniciar Sesion</button>
-            <button type="button" onclick="mostrar2()">Crear cuenta</button>
-        </form>
-        
-            <form id="form2" class="oculto" action="alta.php" method="post">
+                    <div class="input-contenedor">
+                        <input type="text" placeholder="Usuario" required>
+                    </div>
 
-                <input type="text" placeholder="Ingrese nombre" name="nom1">
-                <input type="text" placeholder="Ingrese apellido" name="ape1">
+                    <div class="input-contenedor">
+                        <input type="password" placeholder="Contraseña" required>
+                    </div>
 
-                <input type="text" placeholder="Email" name="ema">
-                <button type="submit" name="agre">Crear cuenta</button>
-                <button type="button" onclick="mostrar2()">Cancelar</button>
-            </form>
-    <script src="javas.js"></script>
+                    <div class="opciones">
+                        <label>
+                            <input type="checkbox"> Recordar
+                        </label>
+                        <a href="#">Olvidaste la contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="boton">Login</button>
+
+                    <p class="crear-cuenta">No tenes una contraseña? <a href="#">Registrate</a></p>
+                </form>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
-
