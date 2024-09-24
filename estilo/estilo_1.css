@@ -9,7 +9,7 @@ body {
 }
 
 .background {
-    background: url('img/fondo\ interior.jpg') no-repeat center center/cover;
+    background-color: #505050;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,7 +27,7 @@ body {
 }
 
 .formulario h2 {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-bottom: 20px;
     font-size: 28px;
 }
