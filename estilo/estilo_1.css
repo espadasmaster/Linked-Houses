@@ -6,10 +6,11 @@
 
 body {
     font-family: 'Arial', sans-serif;
+    
 }
 
 .background {
-    background-color: #424242;
+    background-image: url("fondointerior.jpg");
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -27,7 +28,7 @@ body {
 }
 
 .formulario h2 {
-    color: rgb(0, 0, 0);
+    color: white;
     margin-bottom: 20px;
     font-size: 28px;
 }
