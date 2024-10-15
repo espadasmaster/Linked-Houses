@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/ventas.css">
+    <title>Propiedad en Venta</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Listado de Propiedades</h1>
+        <div id="property-list" class="property-list"></div> <!-- Contenedor para las propiedades -->
+        
+        <button class="add-publication-btn">Agregar Publicación +</button>
+
+        <div class="form-container" id="modal-form" style="display:none;">
+            <h2>Registrar Nueva Propiedad</h2>
+            <form id="property-form">
+                <label for="nombre">Nombre y apellido *</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono *</label>
+                <input type="text" id="telefono" name="telefono" placeholder="Ej: 112345678 (CABA) o 3511234567 (Córdoba)" required>
+
+                <label for="localidad">Localidad/provincia *</label>
+                <input type="text" id="localidad" name="localidad" required>
+
+                <label for="tipo">Tipo de propiedad *</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Seleccione...</option>
+                    <option value="casa">Casa</option>
+                    <option value="departamento">Departamento</option>
+                    <option value="terreno">Terreno</option>
+                    <!-- Agregar más opciones si es necesario -->
+                </select>
+
+                <label for="comentarios">Comentarios</label>
+                <textarea id="comentarios" name="comentarios" maxlength="250"></textarea>
+                <span class="char-count">0/250</span>
+
+                <button type="submit" class="btn">Enviar</button>
+                <button type="button" class="btn close-btn">Cerrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar el formulario modal
+        document.querySelector('.add-publication-btn').addEventListener('click', function() {
+            document.getElementById('modal-form').style.display = 'block';
+        });
+
+        // Cerrar el formulario modal
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('modal-form').style.display = 'none';
+        });
+
+        // Contador de caracteres
+        const comentarios = document.getElementById('comentarios');
+        const charCount = document.querySelector('.char-count');
+        comentarios.addEventListener('input', () => {
+            charCount.textContent = `${comentarios.value.length}/250`;
+        });
+    </script>
+</body>
+</html>
