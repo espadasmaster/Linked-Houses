@@ -10,8 +10,7 @@ body {
 }
 
 .background {
-    background-image: url("fondointerior.jpg");
-    background-color: #000;
+    background-image: url('fondo1.jpg');
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -52,6 +51,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    color: #ffff;
 }
 
 .opciones a {
@@ -65,10 +65,15 @@ body {
     padding: 12px;
     border-radius: 25px;
     border: none;
-    background-color: #fff;
+    background-color: #eb7c15;
     color: #000;
     font-weight: bold;
     cursor: pointer;
+}
+
+.boton:hover {
+    transform: scale(1.1);
+    transition: 1s;
 }
 
 .crear-cuenta {
