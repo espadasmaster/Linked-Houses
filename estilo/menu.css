@@ -6,7 +6,8 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-image: url(fondocasa.jpeg);
+    background-size: cover;    
 }
 
 /* Sección de Hero */
@@ -52,6 +53,8 @@ body {
 
 .explorar-btn:hover {
     background-color: #c0392b;
+    transform: scale(1.1);
+    transition: 1s;
 }
 
 /* Botones de opciones (Comprar, Rentar y intercambio) */
