@@ -1,49 +1,31 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+
 <?php 
 
-$conexdb = new mysqli("localhost","root","","linked-houses");
+include_once("conex/cn.php");
+$conexion = conexion();
+
+if (isset($_POST['registrarse'])) {
+
+$usuario = $_POST['usuario'];
+$nombre = $_POST['nombre'];
+$apellido = $_POST['apellido'];
+$dni = $_POST['dni'];
+$mail = $_POST['mail'];
+$clave = $_POST['clave'];
+
+//sentencia sql
+$insertar = "INSERT INTO usuario (Usuario, Nombre, Apellido, DNI, Mail, Clave) VALUES('$usuario','$nombre', '$apellido', '$dni', '$mail', '$clave')";
 
 
-// Crear cuenta
-if(isset($_POST["regis"])){
-    // Validar que todos los campos no estén vacíos
-    if(!empty($_POST["DNI"]) && !empty($_POST["nombre"]) && !empty($_POST["apellido"]) 
-    && !empty($_POST["usuario"]) && !empty($_POST["contraseña"]) && !empty($_POST["email"])){ 
-        // Asignamos el valor
-        $DNI = $_POST["DNI"];
-        $nombre = $_POST["nombre"];
-        $apellido = $_POST["apellido"];
-        $usuario = $_POST["usuario"];
-        $contraseña = $_POST["contraseña"]; 
-        $email = $_POST["email"];
-        
-        // Aquí se debe realizar la validación y sanitización de los datos
-
-        // Inserción en la base de datos
-        $insertar = "INSERT INTO usuario (DNI, Nombre, Apellido, Usuario, Contraseña, Mail) VALUES ('$DNI', '$nombre', '$apellido', '$usuario','$contraseña', '$email')";
-
-        // Ejecutar la consulta
-        if (mysqli_query($conexdb, $insertar)) {
-            echo "Registro exitoso.";
-        } else {
-            echo "Error: " . $insertar . "<br>" . mysqli_error($conexdb);
-        }
-    } else {
-        echo "Por favor complete todos los campos.";
-    }
-}
-
+// Ejecutamos la sentencia y comprobamos si ha ido bien
+if($conexion->query($insertar)) {
+    echo "<p>Registro insertado con éxito</p>";
+  } else {
+    echo "<p>Hubo un error al ejecutar la sentencia de inserción: {$conexion->error}</p>";
+  }
 // Cerrar conexión
-mysqli_close($conexdb);
-
+mysqli_close($conexion);
+}
 ?>
 
-</body>
-</html>
+
