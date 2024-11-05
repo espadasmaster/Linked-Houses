@@ -13,6 +13,8 @@ $dni = $_POST['dni'];
 $mail = $_POST['mail'];
 $clave = $_POST['clave'];
 
+
+
 //sentencia sql
 $insertar = "INSERT INTO usuario (Usuario, Nombre, Apellido, DNI, Mail, Clave) VALUES('$usuario','$nombre', '$apellido', '$dni', '$mail', '$clave')";
 
