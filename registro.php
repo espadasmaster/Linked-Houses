@@ -1,7 +1,7 @@
 
 <?php 
 
-include_once("conex/cn.php");
+include(".../conex/cn.php");
 $conexion = conexion();
 
 if (isset($_POST['registrarse'])) {
