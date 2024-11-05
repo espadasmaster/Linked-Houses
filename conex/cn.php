@@ -1,4 +1,4 @@
 <?php
-$ruta= new mysqli("localhost","root","","sistemaecologico");
+$ruta= new mysqli ("localhost","root","","linkedhouses");
 ?>
 
