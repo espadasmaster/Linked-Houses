@@ -16,7 +16,7 @@ $clave = $_POST['clave'];
 
 
 //sentencia sql
-$insertar = "INSERT INTO usuario (Usuario, Nombre, Apellido, DNI, Mail, Clave) VALUES('$usuario','$nombre', '$apellido', '$dni', '$mail', '$clave')";
+$insertar = "INSERT INTO usuario (Usuario, Nombre, Apellido, DNI, Mail, Clave) VALUES ('$usuario','$nombre', '$apellido', '$dni', '$mail', '$clave')";
 
 
 // Ejecutamos la sentencia y comprobamos si ha ido bien

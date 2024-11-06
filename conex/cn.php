@@ -1,4 +1,4 @@
 <?php
-$ruta= new mysqli ("localhost","root","","linkedhouses");
+$conexdb= new mysqli ("localhost","root","","linkedhouses");
 ?>
 
