@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registro</title>
+    <title>Registrarse</title>
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="estilo/estilo_1.css">
 </head>
 <body>
     <section class="background">
         <div class="contenedor">
             <div class="formulario">
+<<<<<<< HEAD
                 <form action="crearcuenta.php" method="post">
                     <h2>Registrate ahora!</h2>
 
@@ -36,9 +38,39 @@
 
                     <div class="input-contenedor">
                         <input type="text" placeholder="Mail" required name="Mail">
+=======
+                <form action="registro.php" method="post">
+                    <h2>¡Registrate!</h2>
+
+                    <div class="input-contenedor">
+                        <input type="text" placeholder="Usuario" name="usuario" required>
                     </div>
 
-                    <button type="submit" class="boton">Registrarse</button>
+                    <div class="input-contenedor">
+                        <input type="text" placeholder="Nombre" name="nombre" required>
+                    </div>
+
+                    <div class="input-contenedor">
+                        <input type="text" placeholder="Apellido" name="apellido" required>
+                    </div>
+
+                    <div class="input-contenedor">
+                        <input type="text" placeholder="DNI" name="dni" required>
+                    </div>
+
+                    <div class="input-contenedor">
+                        <input type="text" placeholder="Mail" name="mail" required>
+                    </div>
+
+                    <div class="input-contenedor">
+                        <input type="password" placeholder="Contraseña" name="clave" required>
+>>>>>>> ee82e40b8724755ba4868def88a23c22e084e952
+                    </div>
+
+                    <button type="submit" class="boton" value="registrarse">Registrarse</button>
+                    <br>
+                    <br>
+                    <p class="crear-cuenta">Ya tenes una cuenta? <a href="Index.html">Inicia sesion</a></p>
 
                 </form>
             </div>
