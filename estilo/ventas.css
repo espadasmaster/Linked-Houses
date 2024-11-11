@@ -1,3 +1,38 @@
+
+
+body {
+    background-image: url(fondocasa.jpeg);
+    background-size: cover;
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .navbar button {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .navbar button:hover {
+    background-color: #e74c3c;
+  }
+
+  .navbar img {
+    height: 90px; 
+  }
+
 .add-publication-btn {
     background-color: orange;
     color: white;
@@ -97,4 +132,9 @@ textarea {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 15px;
+}
+
+.subtitulo {
+    background-color: #ffffff;
+
 }
