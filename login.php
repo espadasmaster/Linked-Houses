@@ -25,12 +25,12 @@ function elegir($conexdb){
 }
 
 function sesionar($conexdb){
-    $email = $_POST['ema'];
-    $pass = $_POST['pass'];
+    $mail = $_POST['Mail'];
+    $contra = $_POST['Contra'];
 
     
 
-   $consulta = "SELECT nick FROM usuarios WHERE email='$email' AND contra= '$pass'";
+   $consulta = "SELECT nick FROM usuarios WHERE email='$mail' AND contra= '$contra'";
 
     $consultaCompleta= mysqli_query($conexdb, $consulta);
 
