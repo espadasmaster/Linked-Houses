@@ -9,6 +9,23 @@ body {
     
 }
 
+.navbar {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar img {
+    height: 90px; 
+    transition: 0.5s;
+  }
+
+  .navbar img:hover{
+    transform: scale(1.05);
+  }
+
 .background {
     background-image: url('fondo1.jpg');
     height: 100vh;
@@ -28,7 +45,7 @@ body {
 }
 
 .formulario h2 {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-bottom: 20px;
     font-size: 28px;
 }
@@ -69,11 +86,11 @@ body {
     color: #000;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .boton:hover {
-    transform: scale(1.1);
-    transition: 1s;
+    transform: scale(1.05)
 }
 
 .crear-cuenta {
