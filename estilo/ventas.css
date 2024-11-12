@@ -1,4 +1,8 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     background-image: url(fondocasa.jpeg);
@@ -135,6 +139,6 @@ textarea {
 }
 
 .subtitulo {
-    background-color: #ffffff;
+    margin-left: 20px;
 
 }
