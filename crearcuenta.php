@@ -16,7 +16,7 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         // Ejecutar la consulta y verificar si se realizó correctamente
         if ($conexdb->query($sql) === TRUE) {
             echo "Nuevo registro creado exitosamente.";
-            
+            header("location:menu.html");
         } else {
             echo "Error: " . $sql . "<br>" . $conexdb->error;
         }
