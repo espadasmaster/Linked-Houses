@@ -10,7 +10,7 @@
 <?php 
 session_start();
 
-include_once 'cn.php';
+include_once 'conex/cn.php';
 
 elegir($conexdb);
 
@@ -30,17 +30,17 @@ function sesionar($conexdb){
 
     
 
-   $consulta = "SELECT nick FROM usuarios WHERE email='$mail' AND contra= '$contra'";
+   $consulta = "SELECT Usuario FROM usuario WHERE email='$mail' AND contra= '$contra'";
 
     $consultaCompleta= mysqli_query($conexdb, $consulta);
 
     $coname= $conexdb->query($consulta);
 
-    $name = $coname ? $coname->fetch_assoc()['nick'] : null;
+    $name = $coname ? $coname->fetch_assoc()['Usuario'] : null;
 
     if(mysqli_num_rows($consultaCompleta) > 0) {
         $_SESSION['apodo'] = $name;
-        header ("location: inicio.php");
+        header ("location: menu.html");
         exit();
     }else{
         echo '
