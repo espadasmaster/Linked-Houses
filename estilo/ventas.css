@@ -214,3 +214,8 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.posteos-container {
+    display: flex;
+    gap: 20px;
+}
