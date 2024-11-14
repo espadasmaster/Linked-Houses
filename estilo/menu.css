@@ -50,7 +50,7 @@ body {
     background-image: url('img_/casa.png'); /* Cambia esta ruta a tu imagen */
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
