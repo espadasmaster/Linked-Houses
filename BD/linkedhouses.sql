@@ -40,14 +40,15 @@ CREATE TABLE `localidad` (
 --
 
 CREATE TABLE `publicaciones` (
-  `Localidad` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Tipo` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Transaccion` int(25) NOT NULL,
-  `Dni-dueño` int(8) NOT NULL,
-  `Cant-ambientes` int(25) NOT NULL,
-  `Fecha` int(10) NOT NULL,
-  `Met-pago` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Condiciones` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL
+  `id` INT AUTO_INCREMENT PRIMARY KEY,  -- Agregado un campo de ID para identificar las publicaciones
+  `Localidad` VARCHAR(25) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Tipo` VARCHAR(25) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Dni-dueño` INT(8) NOT NULL,
+  `Cant-ambientes` INT(25) NOT NULL,
+  `Fecha` INT(10) NOT NULL,
+  `Met-pago` VARCHAR(25) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Condiciones` VARCHAR(25) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `Imagen` VARCHAR(255)  COLLATE utf8mb4_spanish_ci NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------

@@ -64,36 +64,40 @@
 
         <div class="form-container" id="modal-form" style="display:none;">
             <h2>Registrar Nueva Propiedad</h2>
-            <form id="property-form">
-                <label for="nombre">Nombre y apellido *</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="telefono">Teléfono *</label>
-                <input type="text" id="telefono" name="telefono" placeholder="Ej: 112345678 (CABA) o 3511234567 (Córdoba)" required>
-
+            <form id="property-form" action="subir.php" method="POST" enctype="multipart/form-data">
                 <label for="localidad">Localidad/provincia *</label>
                 <input type="text" id="localidad" name="localidad" required>
-
+        
                 <label for="tipo">Tipo de propiedad *</label>
                 <select id="tipo" name="tipo" required>
                     <option value="">Seleccione...</option>
                     <option value="casa">Casa</option>
                     <option value="departamento">Departamento</option>
                     <option value="terreno">Terreno</option>
-                    <!-- Agregar más opciones si es necesario -->
                 </select>
-
-                <label for="comentarios">Comentarios</label>
-                <textarea id="comentarios" name="comentarios" maxlength="250"></textarea>
-                <span class="char-count">0/250</span>
-
-                <button type="submit" class="btn">Enviar</button>
+        
+                <label for="dni_dueno">DNI del dueño *</label>
+                <input type="text" id="dni_dueno" name="dni_dueno" required>
+        
+                <label for="cant_ambientes">Cantidad de ambientes *</label>
+                <input type="number" id="cant_ambientes" name="cant_ambientes" required>
+        
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" name="fecha" required>
+        
+                <label for="met_pago">Método de pago *</label>
+                <input type="text" id="met_pago" name="met_pago" required>
+        
+                <label for="condiciones">Condiciones *</label>
+                <textarea id="condiciones" name="condiciones" required></textarea>
+        
+                <label for="imagen">Imagen de la propiedad *</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+        
+                <button type="submit" name="submit">Enviar Publicación</button>
                 <button type="button" class="btn close-btn">Cerrar</button>
             </form>
-        </div>
+        </div>        
     </div>
 
 
