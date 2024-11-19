@@ -6,7 +6,11 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    
+    background-image: url('fondo1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -27,7 +31,6 @@ body {
   }
 
 .background {
-    background-image: url('fondo1.jpg');
     height: 100vh;
     display: flex;
     justify-content: center;

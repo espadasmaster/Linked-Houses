@@ -6,7 +6,10 @@
 
 body {
     background-image: url(fondo2.jfif);
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -64,15 +67,13 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-top: 20px;
-    display: none; /* Oculto por defecto */
+    margin: center;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    width: 90%; /* Ancho responsivo */
-    max-width: 500px; /* Ancho máximo */
+    width: 90%;
+    max-width: 500px; 
 }
 
 .form-container h2 {
@@ -211,8 +212,19 @@ textarea {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    width: 400px;
-    text-align: center;
+    display: flex;
+    gap: 20px;
+    width: 600px;
+}
+
+.modal-contenido img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-texto {
+    flex: 1;
 }
 
 .modal-contenido h2 {
@@ -227,6 +239,11 @@ textarea {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    margin-left: 250px;
+}
+
+.cerrar-boton:hover {
+    background-color: #bb2a38;
 }
 
 .posteos-container {
