@@ -10,9 +10,21 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         $Contra = $_POST["Contra"]; 
         $Mail = $_POST["Mail"];
 
+        // Validaciones
+        if (preg_match("/^[0-9]{8,}$/", $DNI) &&
+            preg_match("/^[a-zA-Z]+$/", $Nombre) && // Solo letras para nombre
+            preg_match("/^[a-zA-Z]+$/", $Apellido) && // Solo letras para apellido
+            preg_match("/^[a-zA-Z0-9]+$/", $Usuario) && // Letras y números para nombreuser
+            strlen($Contra) >= 8  && // Mínimo 8 caracteres para clave
+            preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/", $Email)
+        ) {  
+
+
         $sql = "INSERT INTO usuario (DNI, Nombre, Apellido, Usuario, Contra, Mail) 
                 VALUES ('$DNI', '$Nombre', '$Apellido', '$Usuario', '$Contra', '$Mail')";
 
+
+        }
         // Ejecutar la consulta y verificar si se realizó correctamente
         if ($conexdb->query($sql) === TRUE) {
             echo "Nuevo registro creado exitosamente.";
@@ -24,7 +36,7 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         // Cerrar la conexión
         $conexdb->close();
     } else {
-        echo "Por favor complete todos los campos.";
+        echo "Por favor complete todos los campos o verifique que esten bien.";
     }
 
 ?>
