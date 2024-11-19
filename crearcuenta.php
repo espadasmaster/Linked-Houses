@@ -11,7 +11,7 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         $Mail = $_POST["Mail"];
 
         // Validaciones
-        if (preg_match("/^[0-8]{8,}$/", $DNI) && //solo numeros
+        if (preg_match("/^[0-8]{8}$/", $DNI) && //solo numeros
             preg_match("/^[a-zA-Z]+$/", $Nombre) && // Solo letras para nombre
             preg_match("/^[a-zA-Z]+$/", $Apellido) && // Solo letras para apellido
             preg_match("/^[a-zA-Z0-9]+$/", $Usuario) && // Letras y números
