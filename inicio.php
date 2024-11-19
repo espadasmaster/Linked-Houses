@@ -20,14 +20,12 @@ if(!isset($_SESSION['apodo'])){
     die();
 }
 
-
-
 // Verificar si se ha enviado el formulario
 if (isset($_POST['cerrar'])) {
     // Llama a la función si el botón ha sido presionado
     cerrar();
 }
-
+//maidana estuvo ACA
 function cerrar() {
     
     session_destroy();
@@ -44,4 +42,3 @@ function cerrar() {
 </form>
 </body>
 </html>
-
