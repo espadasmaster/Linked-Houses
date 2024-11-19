@@ -11,7 +11,7 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         $Mail = $_POST["Mail"];
 
         // Validaciones
-        if (preg_match("/^[0-9]{8,}$/", $DNI) && //solo numeros
+        if (preg_match("/^[0-8]{8,}$/", $DNI) && //solo numeros
             preg_match("/^[a-zA-Z]+$/", $Nombre) && // Solo letras para nombre
             preg_match("/^[a-zA-Z]+$/", $Apellido) && // Solo letras para apellido
             preg_match("/^[a-zA-Z0-9]+$/", $Usuario) && // Letras y números
@@ -23,12 +23,12 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         $sql = "INSERT INTO usuario (DNI, Nombre, Apellido, Usuario, Contra, Mail) 
                 VALUES ('$DNI', '$Nombre', '$Apellido', '$Usuario', '$Contra', '$Mail')";
 
-
+        
         
         // Ejecutar la consulta y verificar si se realizó correctamente
         if ($conexdb->query($sql) === TRUE) {
             echo "<script>alert('Nuevo registro creado exitosamente.');</script>";
-            header("location:menu.html");
+            header("location:menu.html"); //header para redireccionar 
         } else {
             echo "Error: " . $sql . "<br>" . $conexdb->error;
         }

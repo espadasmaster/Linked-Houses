@@ -26,12 +26,12 @@ function sesionar($conexdb){
 
     $consultaCompleta= mysqli_query($conexdb, $consulta);
 
-    $coname= $conexdb->query($consulta);
+    $conuser= $conexdb->query($consulta);
 
-    $name = $coname ? $coname->fetch_assoc()['Usuario'] : null;
+    $user = $conuser ? $conuser->fetch_assoc()['Usuario'] : null;
 
     if(mysqli_num_rows($consultaCompleta) > 0) {
-        $_SESSION['Usuario'] = $name;
+        $_SESSION['Usuario'] = $user;
         header ("location: menu.html");
         exit();
     }else{
