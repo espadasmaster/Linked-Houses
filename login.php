@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 
 <?php 
 session_start();
@@ -15,7 +7,7 @@ include_once 'conex/cn.php';
 elegir($conexdb);
 
 function elegir($conexdb){
-    if(isset($_POST['sesion'])){
+    if(isset($_POST['login'])){
         sesionar($conexdb);
     }
     // if(isset($_POST['agre'])){
@@ -25,12 +17,12 @@ function elegir($conexdb){
 }
 
 function sesionar($conexdb){
-    $mail = $_POST['Mail'];
-    $contra = $_POST['Contra'];
+    $usuario = $_POST['usuario'];
+    $contra = $_POST['contra'];
 
     
 
-   $consulta = "SELECT Usuario FROM usuario WHERE email='$mail' AND contra= '$contra'";
+   $consulta = "SELECT Usuario FROM usuario WHERE Usuario='$usuario' AND Contra= '$contra'";
 
     $consultaCompleta= mysqli_query($conexdb, $consulta);
 
@@ -39,7 +31,7 @@ function sesionar($conexdb){
     $name = $coname ? $coname->fetch_assoc()['Usuario'] : null;
 
     if(mysqli_num_rows($consultaCompleta) > 0) {
-        $_SESSION['apodo'] = $name;
+        $_SESSION['Usuario'] = $name;
         header ("location: menu.html");
         exit();
     }else{
@@ -55,5 +47,3 @@ function sesionar($conexdb){
 mysqli_close($conexdb);
 ?>
     
-</body>
-</html>
