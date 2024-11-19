@@ -9,8 +9,25 @@ body {
     
 }
 
+.navbar {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar img {
+    height: 70px; 
+    transition: 0.5s;
+  }
+
+  .navbar img:hover{
+    transform: scale(1.05);
+  }
+
 .background {
-    background-image: url("fondointerior.jpg");
+    background-image: url('fondo1.jpg');
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,7 +45,7 @@ body {
 }
 
 .formulario h2 {
-    color: white;
+    color: rgb(0, 0, 0);
     margin-bottom: 20px;
     font-size: 28px;
 }
@@ -51,6 +68,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    color: #ffff;
 }
 
 .opciones a {
@@ -64,10 +82,15 @@ body {
     padding: 12px;
     border-radius: 25px;
     border: none;
-    background-color: #fff;
+    background-color: #eb7c15;
     color: #000;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.boton:hover {
+    transform: scale(1.05)
 }
 
 .crear-cuenta {

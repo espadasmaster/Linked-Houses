@@ -4,9 +4,44 @@
     box-sizing: border-box;
 }
 
+.navbar {
+    background-color: #ffffff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .navbar button {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.5s;
+  }
+
+  .navbar button:hover {
+    transform: scale(1.05);
+  }
+
+  .navbar img {
+    height: 70px;
+    transition: 0.5s; 
+  }
+  
+  .navbar img:hover{
+    transform: scale(1.05);
+  }
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-image: url(fondocasa.jpeg);
+    background-size: cover;    
 }
 
 /* Sección de Hero */
@@ -15,7 +50,7 @@ body {
     background-image: url('img_/casa.png'); /* Cambia esta ruta a tu imagen */
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,10 +83,12 @@ body {
     border-radius: 5px;
     font-size: 18px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 .explorar-btn:hover {
     background-color: #c0392b;
+    transform: scale(1.1);
 }
 
 /* Botones de opciones (Comprar, Rentar y intercambio) */

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="estilo/ventas.css">
+    <title>Explorar</title>
+</head>
+<body>
+    <div class="navbar">
+
+    <a href="menu.html"><img src="logo_boceto.PNG" alt="Logo"></a>
+
+        <div class="buttons">
+            <button onclick="location.href='Index.html'">Iniciar Sesión</button>
+            <button onclick="location.href='registrarse.html'">Registrarse</button>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <h1 class="subtitulo">Listado de Propiedades</h1>
+        <div id="property-list" class="property-list"></div> <!-- Contenedor para las propiedades -->
+        
+        <button class="add-publication-btn">Agregar Publicación +</button>
+        <br>
+        <br>
+        <br>
+    <div class="posteos-container">
+        <div class="posteo">
+            <img src="estilo/casapubli.jpg" alt="Publicacion 1">
+            <div class="posteo-contenido">
+                <h3>Titulo de la Publicacion 1</h3>
+                <br>
+                <button onclick="openModal('modal1')">Ver mas</button>
+            </div>
+        </div>
+
+        <div class="posteo">
+            <img src="estilo/casapubli2.jpg" alt="Publicacion 2">
+            <div class="posteo-contenido">
+                <h3>Titulo de la Publicacion 2</h3>
+                <br>
+                <button onclick="openModal('modal2')">Ver mas</button>
+            </div>
+        </div>
+        <div class="posteo">
+            <img src="estilo/casapubli2.jpg" alt="Publicacion 2">
+            <div class="posteo-contenido">
+                <h3>Titulo de la Publicacion 2</h3>
+                <br>
+                <button onclick="openModal('modal2')">Ver mas</button>
+            </div>
+        </div>
+        <div class="posteo">
+            <img src="estilo/casapubli2.jpg" alt="Publicacion 2">
+            <div class="posteo-contenido">
+                <h3>Titulo de la Publicacion 2</h3>
+                <br>
+                <button onclick="openModal('modal2')">Ver mas</button>
+            </div>
+        </div>
+    </div>
+
+        <div id="modal1" class="modal">
+            <div class="modal-contenido">
+                <h2>Detalle de la Publicacion 1</h2>
+                <p>Esta es la informacion de la publi 1 bla bla bla</p>
+                <button class="cerrar-boton" onclick="closeModal('modal1')">Cerrar</button>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-contenido">
+                <h2>Detalle de la Publicacion 2</h2>
+                <p>Esta es la informacion de la publi 2 bla bla bla</p>
+                <button class="cerrar-boton" onclick="closeModal('modal2')">Cerrar</button>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-contenido">
+                <h2>Detalle de la Publicacion 2</h2>
+                <p>Esta es la informacion de la publi 2 bla bla bla</p>
+                <button class="cerrar-boton" onclick="closeModal('modal2')">Cerrar</button>
+            </div>
+        </div>
+        <div class="form-container" id="modal-form" style="display:none;">
+            <h2>Registrar Nueva Propiedad</h2>
+            <form id="property-form" action="subir.php" method="POST" enctype="multipart/form-data">
+                <label for="localidad">Localidad/provincia *</label>
+                <input type="text" id="localidad" name="localidad" required>
+        
+                <label for="tipo">Tipo de propiedad *</label>
+                <select id="tipo" name="tipo" required>
+                    <option value="">Seleccione...</option>
+                    <option value="casa">Casa</option>
+                    <option value="departamento">Departamento</option>
+                    <option value="terreno">Terreno</option>
+                </select>
+        
+                <label for="dni_dueno">DNI del dueño *</label>
+                <input type="text" id="dni_dueno" name="dni_dueno" required>
+        
+                <label for="cant_ambientes">Cantidad de ambientes *</label>
+                <input type="number" id="cant_ambientes" name="cant_ambientes" required>
+        
+                <label for="fecha">Fecha *</label>
+                <input type="date" id="fecha" name="fecha" required>
+        
+                <label for="met_pago">Método de pago *</label>
+                <input type="text" id="met_pago" name="met_pago" required>
+        
+                <label for="condiciones">Condiciones *</label>
+                <textarea id="condiciones" name="condiciones" required></textarea>
+        
+                <label for="imagen">Imagen de la propiedad *</label>
+                <input type="file" id="imagen" name="imagen" accept="image/*" required>
+        
+                <button type="submit" name="submit">Enviar Publicación</button>
+                <button type="button" class="btn close-btn">Cerrar</button>
+            </form>
+        </div>        
+    </div>
+
+
+    <script>
+        // Mostrar el formulario modal
+        document.querySelector('.add-publication-btn').addEventListener('click', function() {
+            document.getElementById('modal-form').style.display = 'block';
+        });
+
+        // Cerrar el formulario modal
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('modal-form').style.display = 'none';
+        });
+
+        // Contador de caracteres
+        const comentarios = document.getElementById('comentarios');
+        const charCount = document.querySelector('.char-count');
+        comentarios.addEventListener('input', () => {
+            charCount.textContent = `${comentarios.value.length}/250`;
+        });
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
