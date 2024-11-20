@@ -168,6 +168,7 @@ textarea {
     margin-left: 30px;
     background-color: #ffffff;
     transition: 0.5s;
+    padding: 15px; 
 }
 
 .posteo:hover {
