@@ -40,14 +40,13 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url(fondocasa.jpeg);
+    background-image: url(fondo2.jfif);
     background-size: cover;    
 }
 
-/* Sección de Hero */
 .hero {
     position: relative;
-    background-image: url('img_/casa.png'); /* Cambia esta ruta a tu imagen */
+    background-image: url('img_/casa.png'); 
     background-size: cover;
     background-position: center;
     height: 500px;
