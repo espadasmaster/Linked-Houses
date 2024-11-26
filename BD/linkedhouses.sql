@@ -58,12 +58,12 @@ CREATE TABLE `publicaciones` (
 --
 
 CREATE TABLE `usuario` (
-  `DNI` int(8) NOT NULL,
-  `Nombre` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Apellido` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Usuario` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Contra` varchar(250) COLLATE utf8mb4_spanish_ci NOT NULL,
-  `Mail` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL
+  `dni` int(8) NOT NULL,
+  `nombre` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `apellido` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `telefono` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `contra` varchar(250) COLLATE utf8mb4_spanish_ci NOT NULL,
+  `mail` varchar(25) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
