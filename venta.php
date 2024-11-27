@@ -54,7 +54,7 @@
                     echo "</div>";
                 }
             } else {
-                echo "<p>No se encontraron datos.</p>";
+                echo "<p>No se encontraron publicaciones.</p>";
             }
 
             // Cerrar conexión
