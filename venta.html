@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="estilo/ventas.css">
+    <title>Explorar</title>
+</head>
+<body>
+    <div class="navbar">
+
+    <a href="Index.html"><img src="logo_boceto.PNG" alt="Logo"></a>
+
+        <div class="buttons">
+            <button onclick="location.href='login.html'">Iniciar Sesión</button>
+            <button onclick="location.href='registrarse.html'">Registrarse</button>
+        </div>
+    </div>
+    <div class="container">
+        <br>
+        <h1 class="subtitulo">Lista de Propiedades</h1>
+        <div id="property-list" class="property-list"></div> <!-- Contenedor para las propiedades -->
+        
+        <button class="add-publication-btn" onclick="location.href='agregar_publicacion.html'">Agregar Publicación +</button>
+        <br>
+        <br>
+        <br>
+    <div class="posteos-container">
+        <div class="posteo">
+            <img src="estilo/casapubli.jpg" alt="Publicacion 1">
+            <div class="posteo-contenido">
+                <h3>Titulo de la Publicacion 1</h3>
+                <br>
+                <p>Publicado el 02/10/24</p>
+                <br>
+                <button onclick="openModal('modal1')">Ver mas</button>
+            </div>
+        </div>
+
+        <div class="posteo">
+            <img src="estilo/casapubli2.jpg" alt="Publicacion 2">
+            <div class="posteo-contenido">
+                <h3>Titulo de la Publicacion 2</h3>
+                <br>
+                <p>Publicado el 18/5/24</p>
+                <br>
+                <button onclick="openModal('modal2')">Ver mas</button>
+            </div>
+        </div>
+
+        <div class="posteo">
+            <img src="estilo/casapubli2.jpg" alt="Publicacion 3">
+            <div class="posteo-contenido">
+                <h3>Titulo de la Publicacion 3</h3>
+                <br>
+                <p>Publicado el 23/7/24</p>
+                <br>
+                <button onclick="openModal('modal3')">Ver mas</button>
+            </div>
+        </div>
+    </div>
+
+        <div id="modal1" class="modal">
+            <div class="modal-contenido">
+            <img src="estilo/casapubli.jpg">
+            <div class="modal-texto">
+                <h2>Detalle de la Publicacion 1</h2>
+                <br>
+                <p>Esta es la informacion de la publi 1 bla bla bla</p>
+                <br>
+                <br>
+                <br>
+                <button class="cerrar-boton" onclick="closeModal('modal1')">Cerrar</button>
+            </div>
+            </div>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal">
+            <div class="modal-contenido">
+                <img src="estilo/casapubli2.jpg">
+            <div class="modal-texto">
+                <h2>Detalle de la Publicacion 2</h2>
+                <br>
+                <p>Esta es la informacion de la publi 2 bla bla bla</p>
+                <br>
+                <br>
+                <br>
+                <button class="cerrar-boton" onclick="closeModal('modal2')">Cerrar</button>
+            </div>
+            </div>
+        </div>
+
+        <div id="modal3" class="modal">
+            <div class="modal-contenido">
+                <img src="estilo/casapubli2.jpg">
+                <div class="modal-texto">
+                <h2>Detalle de la Publicacion 3</h2>
+                <br>
+                <p>Esta es la informacion de la publi 3 bla bla bla</p>
+                <br>
+                <br>
+                <br>
+                <button class="cerrar-boton" onclick="closeModal('modal3')">Cerrar</button>
+
+                
+            </div>
+            </div>
+        </div>
+                
+    </div>
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
