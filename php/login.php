@@ -1,6 +1,6 @@
 
 <?php 
-include_once 'BD/conex/cn.php';
+include_once 'conex/cn.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

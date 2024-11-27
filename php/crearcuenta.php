@@ -1,5 +1,5 @@
 <?php 
-include_once 'BD/conex/cn.php'; // Incluir el archivo de conexión
+include_once 'conex/cn.php'; // Incluir el archivo de conexión
 
 if ($_SERVER["REQUES_METHOD"] = "POST"){
         $DNI = $_POST["DNI"];
