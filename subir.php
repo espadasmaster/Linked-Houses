@@ -18,10 +18,10 @@ if (isset($_POST['submit'])) {
     // Obtener los valores del formulario
     $localidad = $_POST['localidad'];
     $tipo = $_POST['tipo'];
-    $dni_dueno = $_POST['dni_dueno'];
+    $dni_dueno = $_POST['dni_dueño'];
     $cant_ambientes = $_POST['cant_ambientes'];
     $fecha = $_POST['fecha'];
-    $met_pago = $_POST['met_pago'];
+    $met_pago = $_POST['met-pago'];
     $condiciones = $_POST['condiciones'];
 
     // Subir la imagen
