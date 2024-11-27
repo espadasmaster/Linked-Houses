@@ -38,6 +38,7 @@ if (isset($_POST['submit'])) {
 
         if ($conn->query($sql) === TRUE) {
             echo "Publicación guardada con éxito";
+            header("Location:venta.html");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
