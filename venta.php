@@ -21,28 +21,28 @@
         <h1 class="subtitulo">Lista de Propiedades</h1>
         <div class="posteos-container">
             <?php
-            // Configuración de la base de datos
+            // base de datos
             $servidor = "localhost";
             $usuario = "root";
             $contraseña = "";
             $BDName = "linkedhouses";
 
-            // Conexión a la base de datos
+            // Conexión a la base 
             $conn = new mysqli($servidor, $usuario, $contraseña, $BDName);
 
-            // Verificar la conexión
+            // Verificamos
             if ($conn->connect_error) {
                 die("Conexión fallida: " . $conn->connect_error);
             }
 
-            // Consulta para obtener las publicaciones
+            //obtener las publicaciones
             $sql = "SELECT Localidad, Imagen, Condiciones, Fecha, Tipo FROM publicaciones";
             $result = $conn->query($sql);
 
-            // Verificar si hay publicaciones
+            //si hay publicaciones....
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    // Renderizar cada publicación como un div
+                    
                     echo '
                     <div class="posteo">
                         <img src="' . htmlspecialchars($row["Imagen"]) . '" alt="' . htmlspecialchars($row["Fecha"]) . '">
@@ -73,7 +73,7 @@
                 echo '<p>No hay publicaciones disponibles.</p>';
             }
 
-            // Cerrar la conexión
+            // Cerramos la conexion
             $conn->close();
             ?>
         </div>
