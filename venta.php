@@ -21,19 +21,7 @@
         <h1 class="subtitulo">Lista de Propiedades</h1>
         <div class="posteos-container">
             <?php
-            // Configuración de la base de datos
-            $servidor = "localhost";
-            $usuario = "root";
-            $contraseña = "";
-            $BDName = "linkedhouses";
-
-            // Conexión a la base de datos
-            $conn = new mysqli($servidor, $usuario, $contraseña, $BDName);
-
-            // Verificar la conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
-            }
+            include_once 'conex/cn.php'; // Incluir el archivo de conexión
 
             // Consulta para obtener las publicaciones
             $sql = "SELECT Localidad, Imagen, Condiciones, Fecha, Tipo FROM publicaciones";
