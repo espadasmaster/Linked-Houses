@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             session_start();
             $_SESSION['Usuario'] = $usuario;
-            header("Location: venta.html"); 
+            header("Location: venta.php"); 
             exit();
         } else {
             echo "<script>alert('Contraseña incorrecta'); window.location.href='Index.html';</script>";

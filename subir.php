@@ -17,11 +17,11 @@ if ($conn->connect_error) {
 if (isset($_POST['submit'])) {
     // Obtener los valores del formulario
     $localidad = $_POST['localidad'];
-    $tipo = $_POST['tipo'];
+    $tipo = $_POST['propi'];
     $dni_dueno = $_POST['dni_dueño'];
     $cant_ambientes = $_POST['cant_ambientes'];
     $fecha = $_POST['fecha'];
-    $met_pago = $_POST['met-pago'];
+    $met_pago = $_POST['tipo'];
     $condiciones = $_POST['condiciones'];
 
     // Subir la imagen

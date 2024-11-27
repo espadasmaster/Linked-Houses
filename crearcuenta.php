@@ -27,11 +27,11 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         // Ejecutar la consulta y verificar si se realizó correctamente
         if ($conexdb->query($sql) === TRUE) {
             echo "<script>alert('Nuevo registro creado exitosamente.');</script>";
-            header("location:venta.html"); //header para redireccionar 
+            header("location:venta.php"); //header para redireccionar 
         } else {
             echo "Error: " . $sql . "<br>" . $conexdb->error;
         }
-
+        
     
         // Cerrar la conexión
         $conexdb->close();
