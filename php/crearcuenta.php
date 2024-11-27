@@ -1,6 +1,5 @@
 <?php 
-
-include_once 'conex/cn.php'; // Incluir el archivo de conexión
+include_once 'BD/conex/cn.php'; // Incluir el archivo de conexión
 
 if ($_SERVER["REQUES_METHOD"] = "POST"){
         $DNI = $_POST["DNI"];
@@ -28,7 +27,7 @@ if ($_SERVER["REQUES_METHOD"] = "POST"){
         // Ejecutar la consulta y verificar si se realizó correctamente
         if ($conexdb->query($sql) === TRUE) {
             echo "<script>alert('Nuevo registro creado exitosamente.');</script>";
-            header("location:menu.html"); //header para redireccionar 
+            header("location:venta.html"); //header para redireccionar 
         } else {
             echo "Error: " . $sql . "<br>" . $conexdb->error;
         }
