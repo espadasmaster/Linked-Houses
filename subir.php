@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
     // Obtener los valores del formulario
     $localidad = $_POST['localidad'];
     $tipo = $_POST['tipo'];
-    $dni_dueno = $_POST['dni_dueno'];
+    $dni_dueno = $_POST['dni_dueño'];
     $cant_ambientes = $_POST['cant_ambientes'];
     $fecha = $_POST['fecha'];
     $met_pago = $_POST['met_pago'];
@@ -38,6 +38,7 @@ if (isset($_POST['submit'])) {
 
         if ($conn->query($sql) === TRUE) {
             echo "Publicación guardada con éxito";
+            header("Location:venta.html");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
