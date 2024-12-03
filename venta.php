@@ -17,7 +17,9 @@
         </div>
     </div>
     <div class="container">
+        <br>
         <h1 class="subtitulo">Lista de Propiedades</h1>
+        <button class="add-publication-btn" onclick="location.href='agregar_publicacion.html'">Agregar Publicación +</button>
         <div id="property-list" class="property-list">
             <?php
             // Configuración de la conexión a la base de datos
@@ -41,9 +43,9 @@
             // Mostrar datos en forma de tarjetas
             if ($resultado->num_rows > 0) {
                 while ($fila = $resultado->fetch_assoc()) {
-                    echo "<div class='tarjeta'>";
+                    echo "<div class='posteo'>";
                     echo "<img src='" . htmlspecialchars($fila['Imagen']) . "' alt='Imagen'>";
-                    echo "<div class='contenido'>";
+                    echo "<div class='posteo-contenido'>";
                     echo "<h3>" . htmlspecialchars($fila['Tipo']) . " en " . htmlspecialchars($fila['Localidad']) . "</h3>";
                     echo "<p><strong>Dueño (DNI):</strong> " . htmlspecialchars($fila['Dni-dueño']) . "</p>";
                     echo "<p><strong>Ambientes:</strong> " . htmlspecialchars($fila['Cant-ambientes']) . "</p>";
@@ -61,7 +63,6 @@
             $conn->close();
             ?>
         </div>
-        <button class="add-publication-btn" onclick="location.href='agregar_publicacion.html'">Agregar Publicación +</button>
     </div>
 </body>
 </html>
