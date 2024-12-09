@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['usuario'])) {
+    $_SESSION['mensaje_error'] = "Necesitas estar logueado para ingresar.";
+    header("Location: login.html");
+    exit();
+}
+
+// Mostrar el mensaje de error si existe
+if (isset($_SESSION['mensaje_error'])) {
+    echo "<script>alert('" . $_SESSION['mensaje_error'] . "');</script>";
+    unset($_SESSION['mensaje_error']); // Eliminar el mensaje para que no se repita
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,21 +21,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="estilo/ventas.css">
-    <title>Agregar Publicacion</title>
+    <title>Agregar Publicación</title>
 </head>
 <body>
     <header>
         <div class="navbar">
-            <a href="Index.html"><img src="logo_boceto.PNG" alt="Logo"></a>
-        
-            <div class="buttons">
-                <button onclick="location.href='login.html'">Iniciar Sesión</button>
-                <button onclick="location.href='registrarse.html'">Registrarse</button>
-                
-            </div>
+            <a href="Index.php"><img src="logo_boceto.PNG" alt="Logo"></a>
         </div>
     </header>
-
 
     <main>
         <div class="form-container" id="modal-form">
@@ -29,7 +38,7 @@
                 <input type="text" id="localidad" name="localidad" required>
         
                 <label for="tipo">Tipo de propiedad *</label>
-                <select id="tipo" name="propi" required>
+                <select id="propi" name="propi" required>
                     <option value="">Seleccione...</option>
                     <option value="casa">Casa</option>
                     <option value="departamento">Departamento</option>
@@ -46,12 +55,12 @@
                 <input type="date" id="fecha" name="fecha" required>
                 
                 <label for="met_pago">Método de pago *</label>
-                <select id="tipo" name="tipo" required>
+                <select id="tipopago" name="tipopago" required>
                     <option value="">Seleccione...</option>
-                    <option value="casa">Efectivo</option>
-                    <option value="terreno">Transferencia</option>
-                    <option value="departamento">Tarjeta de Credito</option>
-                    <option value="terreno">Tarjeta de Debito</option>           
+                    <option value="efectivo">Efectivo</option>
+                    <option value="transferencia">Transferencia</option>
+                    <option value="tarjeta_credito">Tarjeta de Credito</option>
+                    <option value="tarjeta_debito">Tarjeta de Debito</option>           
                 </select>
         
                 <label for="condiciones">Condiciones *</label>
@@ -63,10 +72,6 @@
                 <button type="submit" name="submit">Enviar Publicación</button>
             </form>
         </div>
-    
     </main>
-
-
-    
 </body>
 </html>

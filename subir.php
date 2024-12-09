@@ -1,11 +1,6 @@
 <?php
 include "conex/cn.php";
 
-// Comprobar conexión
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
-
 // Verificar si el formulario fue enviado
 if (isset($_POST['submit'])) {
     // Obtener los valores del formulario
@@ -14,7 +9,7 @@ if (isset($_POST['submit'])) {
     $dni_dueno = $_POST['dni_dueño'];
     $cant_ambientes = $_POST['cant_ambientes'];
     $fecha = $_POST['fecha'];
-    $met_pago = $_POST['tipo'];
+    $met_pago = $_POST['tipopago'];
     $condiciones = $_POST['condiciones'];
 
     // Subir la imagen

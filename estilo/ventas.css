@@ -18,6 +18,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: 'Arial', sans-serif;
 }
 
 .navbar button {
@@ -30,6 +31,7 @@ body {
   border-radius: 5px;
   font-size: 16px;
   transition: 0.5s;
+  font-family: 'Arial', sans-serif;
 }
 
 .navbar button:hover {
@@ -360,4 +362,9 @@ input[type="file"]::file-selector-button:hover {
 .posteos-container {
   display: flex;
   gap: 20px;
+}
+
+.buttons span {
+  margin-right: 10px;
+  font-weight: bold;
 }

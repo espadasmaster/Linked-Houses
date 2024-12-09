@@ -9,17 +9,29 @@
     
 </head>
 <body>
+
+    <?php
+    session_start();
+    $usuarioLogueado = isset($_SESSION['usuario']); 
+    $nombreUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : '';
+    ?>
     <div class="navbar">
-        <a href="Index.html"><img src="logo_boceto.PNG" alt="Logo"></a>
+        <a href="Index.php"><img src="logo_boceto.PNG" alt="Logo"></a>
         <div class="buttons">
+        <?php if ($usuarioLogueado): ?>
+            <span>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></span>
+            <button onclick="location.href='logout.php'">Cerrar Sesión</button>
+        <?php else: ?>
+        
             <button onclick="location.href='login.html'">Iniciar Sesión</button>
             <button onclick="location.href='registrarse.html'">Registrarse</button>
+        <?php endif; ?>
         </div>
     </div>
     <div class="container">
         <br>
         <h1 class="subtitulo">Lista de Propiedades</h1>
-        <button class="add-publication-btn" onclick="location.href='agregar_publicacion.html'">Agregar Publicación +</button>
+        <button class="add-publication-btn" onclick="location.href='agregar_publicacion.php'">Agregar Publicación +</button>
         <div id="property-list" class="property-list">
             <?php
             include "conex/cn.php";

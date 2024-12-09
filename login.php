@@ -15,11 +15,13 @@ $result = $conexdb->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    // Verificamos la contra
+    // Verificamos la contraseña
     if (password_verify($contraseña, $row['Contra'])) {
-        // si todo sale bien:
+        // Si todo es correcto, iniciamos la sesión
         session_start();
-        $_SESSION['usuario'] = $usuario;
+        $_SESSION['usuario'] = $usuario; // Guardamos el nombre de usuario o ID
+        $_SESSION['nombre'] = $row['Nombre']; // Guardamos el nombre del usuario
+        
         header("Location: venta.php"); // Cambia a la página principal o de usuario
         exit();
     } else {
@@ -30,7 +32,6 @@ if ($result->num_rows > 0) {
     // Usuario no encontrado
     echo "<script>alert('Usuario no encontrado'); window.location.href='login.html';</script>";
 }
-
 
 $conexdb->close();
 ?>
