@@ -1,33 +1,36 @@
-
 <?php 
 include_once 'conex/cn.php';
 
+// Obtener datos del formulario
+$usuario = $_POST['usuario'];
+$contraseña = $_POST['Contraseña'];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = mysqli_real_escape_string($conn, $_POST['usuario']);
-    $contra = mysqli_real_escape_string($conn, $_POST['contra']);
+// Evitar inyecciones SQL
+$usuario = $conexdb->real_escape_string($usuario);
+$contraseña = $conexdb->real_escape_string($contraseña);
 
-    
-    $sql = "SELECT * FROM usuario WHERE Usuario = '$usuario'";
-    $resultado = $conn->query($sql);
+// Consultar base de datos
+$sql = "SELECT * FROM usuario WHERE Usuario = '$usuario'";
+$result = $conexdb->query($sql);
 
-    if ($resultado->num_rows > 0) {
-        $fila = $resultado->fetch_assoc();
-
-        
-        if (password_verify($contra, $fila['Contra'])) {
-            
-            session_start();
-            $_SESSION['Usuario'] = $usuario;
-            header("Location: venta.php"); 
-            exit();
-        } else {
-            echo "<script>alert('Contraseña incorrecta'); window.location.href='Index.html';</script>";
-        }
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    // Verificamos la contra
+    if (password_verify($contraseña, $row['Contra'])) {
+        // si todo sale bien:
+        session_start();
+        $_SESSION['usuario'] = $usuario;
+        header("Location: venta.php"); // Cambia a la página principal o de usuario
+        exit();
     } else {
-        echo "<script>alert('El usuario no existe'); window.location.href='Index.html';</script>";
+        // Contraseña incorrecta
+        echo "<script>alert('Contraseña incorrecta'); window.location.href='login.html';</script>";
     }
+} else {
+    // Usuario no encontrado
+    echo "<script>alert('Usuario no encontrado'); window.location.href='login.html';</script>";
 }
 
-$conn->close();
+
+$conexdb->close();
 ?>

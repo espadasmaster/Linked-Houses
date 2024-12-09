@@ -1,12 +1,5 @@
 <?php
-// Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "linkedhouses";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
+include "conex/cn.php";
 
 // Comprobar conexión
 if ($conn->connect_error) {
@@ -36,17 +29,17 @@ if (isset($_POST['submit'])) {
         $sql = "INSERT INTO publicaciones (Localidad, Tipo, `Dni-dueño`, `Cant-ambientes`, Fecha, `Met-pago`, Condiciones, Imagen)
                 VALUES ('$localidad', '$tipo', '$dni_dueno', '$cant_ambientes', '$fecha', '$met_pago', '$condiciones', '$ruta_imagen')";
 
-        if ($conn->query($sql) === TRUE) {
+        if ($conexdb->query($sql) === TRUE) {
             echo "Publicación guardada con éxito";
             header("Location:venta.php");
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . $conexdb->error;
         }
     } else {
         echo "Error al cargar la imagen";
     }
 
     // Cerrar la conexión
-    $conn->close();
+    $conexdb->close();
 }
 ?>

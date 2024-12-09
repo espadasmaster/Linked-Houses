@@ -22,23 +22,11 @@
         <button class="add-publication-btn" onclick="location.href='agregar_publicacion.html'">Agregar Publicación +</button>
         <div id="property-list" class="property-list">
             <?php
-            // Configuración de la conexión a la base de datos
-            $servidor = "localhost";
-            $usuario = "root";
-            $password = "";
-            $base_datos = "linkedhouses";
-
-            // Crear conexión
-            $conn = new mysqli($servidor, $usuario, $password, $base_datos);
-
-            // Verificar conexión
-            if ($conn->connect_error) {
-                die("Conexión fallida: " . $conn->connect_error);
-            }
+            include "conex/cn.php";
 
             // Consulta SQL para obtener datos
             $sql = "SELECT Localidad, Tipo, `Dni-dueño`, `Cant-ambientes`, Fecha, `Met-pago`, Condiciones, Imagen FROM publicaciones";
-            $resultado = $conn->query($sql);
+            $resultado = $conexdb->query($sql);
 
             // Mostrar datos en forma de tarjetas
             if ($resultado->num_rows > 0) {
@@ -60,7 +48,7 @@
             }
 
             // Cerrar conexión
-            $conn->close();
+            $conexdb->close();
             ?>
         </div>
     </div>
