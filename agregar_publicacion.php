@@ -3,15 +3,10 @@ session_start();
 
 if (!isset($_SESSION['usuario'])) {
     $_SESSION['mensaje_error'] = "Necesitas estar logueado para ingresar.";
-    header("Location: login.html");
+    header("Location: Index.php");
     exit();
 }
 
-// Mostrar el mensaje de error si existe
-if (isset($_SESSION['mensaje_error'])) {
-    echo "<script>alert('" . $_SESSION['mensaje_error'] . "');</script>";
-    unset($_SESSION['mensaje_error']); // Eliminar el mensaje para que no se repita
-}
 ?>
 
 <!DOCTYPE html>

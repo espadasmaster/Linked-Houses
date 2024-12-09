@@ -12,6 +12,10 @@
     session_start();
     $usuarioLogueado = isset($_SESSION['usuario']); 
     $nombreUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : ''; // Recupera el nombre del usuario si está disponible
+    if (isset($_SESSION['mensaje_error'])) {
+      echo "<script>alert('" . $_SESSION['mensaje_error'] . "');</script>";
+      unset($_SESSION['mensaje_error']); // Eliminar el mensaje para que no se repita
+    }
     ?>
 
     <div class="navbar">
