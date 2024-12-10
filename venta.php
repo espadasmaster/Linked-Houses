@@ -53,11 +53,6 @@
                     echo "<p><strong>Método de Pago:</strong> " . htmlspecialchars($fila['Met-pago']) . "</p>";
                     echo "<p class='condiciones'><strong>Condiciones:</strong> " . htmlspecialchars($fila['Condiciones']) . "</p>";
                     
-                    // Boton de compra si el usuario esta logueado
-                    if ($usuarioLogueado) {
-                        echo "<button class='buy-btn' onclick=\"location.href='comprar.php?id=" . urlencode($fila['Dni-dueño']) . "'\">Agregar a carrito</button>";
-                    }
-
                     echo "</div>";
                     echo "</div>";
                 }
