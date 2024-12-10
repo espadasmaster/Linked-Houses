@@ -35,7 +35,7 @@
 
     <section class="hero">
         <div class="overlay">
-            <h1>Nuevos Predios</h1>
+            <h1>Explora nuevos predios</h1>
             <br>
             <br>
             <button class="explorar-btn" onclick="location.href='venta.php'">Explora</button>
