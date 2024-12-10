@@ -47,7 +47,6 @@
                     echo "<img src='" . htmlspecialchars($fila['Imagen']) . "' alt='Imagen'>";
                     echo "<div class='posteo-contenido'>";
                     echo "<h3>" . htmlspecialchars($fila['Tipo']) . " en " . htmlspecialchars($fila['Localidad']) . "</h3>";
-                    echo "<p><strong>Dueño (DNI):</strong> " . htmlspecialchars($fila['Dni-dueño']) . "</p>";
                     echo "<p><strong>Ambientes:</strong> " . htmlspecialchars($fila['Cant-ambientes']) . "</p>";
                     echo "<p><strong>Fecha:</strong> " . htmlspecialchars($fila['Fecha']) . "</p>";
                     echo "<p><strong>Método de Pago:</strong> " . htmlspecialchars($fila['Met-pago']) . "</p>";
