@@ -1,2 +1,5 @@
 <?php
-$conexdb = mysqli_connect('localhost', 'root', '', 'linkedhouses');
+$conexdb = mysqli_connect('localhost', 'root', '', 'linkedhouses', 3307);
+
+?>
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -6,23 +6,23 @@
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="estilo/ventas.css">
     <title>Explorar</title>
-    
 </head>
 <body>
 
     <?php
     session_start();
-    $usuarioLogueado = isset($_SESSION['usuario']); 
-    $nombreUsuario = isset($_SESSION['usuario']) ? $_SESSION['usuario'] : '';
+    $usuarioLogueado = isset($_SESSION['usuario']); //verificamos si el usuario esta logueadou
+    $nombreUsuario = $usuarioLogueado ? $_SESSION['usuario'] : '';
     ?>
     <div class="navbar">
         <a href="Index.php"><img src="logo_boceto.PNG" alt="Logo"></a>
         <div class="buttons">
-        <?php if ($usuarioLogueado): ?>
-            <span>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></span>
+        <?php if ($usuarioLogueado): //si el usuario esta logueado, aparecera el boton de cerrar sesion?> 
+            
+            <span>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></span> 
             <button onclick="location.href='logout.php'">Cerrar Sesión</button>
-        <?php else: ?>
-        
+        <?php else: //caso contrario apareceran los botones normales?>
+
             <button onclick="location.href='login.html'">Iniciar Sesión</button>
             <button onclick="location.href='registrarse.html'">Registrarse</button>
         <?php endif; ?>
@@ -36,7 +36,7 @@
             <?php
             include "conex/cn.php";
 
-            // Consulta SQL para obtener datos
+            //obtener datos
             $sql = "SELECT Localidad, Tipo, `Dni-dueño`, `Cant-ambientes`, Fecha, `Met-pago`, Condiciones, Imagen FROM publicaciones";
             $resultado = $conexdb->query($sql);
 
@@ -51,6 +51,12 @@
                     echo "<p><strong>Fecha:</strong> " . htmlspecialchars($fila['Fecha']) . "</p>";
                     echo "<p><strong>Método de Pago:</strong> " . htmlspecialchars($fila['Met-pago']) . "</p>";
                     echo "<p class='condiciones'><strong>Condiciones:</strong> " . htmlspecialchars($fila['Condiciones']) . "</p>";
+                    
+                    // Boton de compra si el usuario esta logueado
+                    if ($usuarioLogueado) {
+                        echo "<button class='buy-btn' onclick=\"location.href='comprar.php?id=" . urlencode($fila['Dni-dueño']) . "'\">Agregar a carrito</button>";
+                    }
+
                     echo "</div>";
                     echo "</div>";
                 }
