@@ -35,13 +35,18 @@
 
     <section class="hero">
         <div class="overlay">
-            <h1>Nuevos Predios</h1>
+            <h1>Explora nuevos predios</h1>
             <br>
             <br>
             <button class="explorar-btn" onclick="location.href='venta.php'">Explora</button>
         </div>
     </section>
 
+    <section class="hero">
+        <div class="overlay">
+            <h2>La página web es una plataforma digital dedicada a la publicación, compra, venta y alquiler de inmuebles. Está diseñada para facilitar la búsqueda de propiedades para los usuarios, ofreciendo un catálogo diverso que incluye casas, departamentos, terrenos y más. Los propietarios y agentes inmobiliarios pueden crear anuncios con detalles completos sobre las propiedades, incluyendo fotografías, descripción, ubicación, precio y características específicas como el número de habitaciones o el tipo de pago. Los usuarios interesados pueden filtrar los resultados según sus preferencias, como el tipo de inmueble, el rango de precio o la ubicación. Además, la página permite una interacción directa entre compradores y vendedores a través de un sistema de mensajes o contacto directo. Su objetivo es proporcionar una experiencia sencilla y eficiente para todas las personas que buscan adquirir, vender o alquilar propiedades, garantizando transparencia y accesibilidad.</h2>
+        </div>
+    </section>
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -77,7 +82,6 @@
             </div>
         </div>
    </footer>
-
 </body>
 </html>
 
