@@ -270,6 +270,12 @@ input[type="file"]::file-selector-button:hover {
   margin: auto;
 }
 
+.property-list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .posteo {
   border: 1px solid #ddd;
   border-radius: 8px;
