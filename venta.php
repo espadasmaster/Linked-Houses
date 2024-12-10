@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="estilo/ventas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>Explorar</title>
 </head>
 <body>
@@ -69,5 +70,42 @@
             ?>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Compania</h4>
+                    <ul>
+                        <li><a href="">Linked Houses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Ayuda</h4>
+                    <ul>
+                        <li><a href="">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tienda Online</h4>
+                    <ul>
+                        <li><a href="">Juego</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Seguinos</h4>
+                    <div class="social-links">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/linked.housesoficial/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="grupo-2">
+                    <small>&copy; 2024 <b>Linked Houses</b> - Todos los Derechos Reservados.</small>
+                </div>
+            </div>
+        </div>
+   </footer>
+
 </body>
 </html>
