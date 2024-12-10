@@ -68,6 +68,12 @@ body {
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
+.hero h2 {
+  color: white;
+    font-size: 25px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
 .hero p {
     color: white;
     font-size: 18px;
