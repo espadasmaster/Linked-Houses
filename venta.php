@@ -90,7 +90,7 @@
                         <li><a href="">Juego</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-cor">
                     <h4>Cualquier duda o consulta, contactanos por nuestras redes</h4>
                     <div class="social-links">
                         <a href=""><i class="fab fa-facebook-f"></i></a>

@@ -91,8 +91,8 @@ if (!isset($_SESSION['usuario'])) {
                         <li><a href="">Juego</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Seguinos</h4>
+                <div class="footer-cor">
+                    <h4>Cualquier duda o consulta, contactanos por nuestras redes</h4>
                     <div class="social-links">
                         <a href=""><i class="fab fa-facebook-f"></i></a>
                         <a href=""><i class="fab fa-twitter"></i></a>
