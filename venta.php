@@ -67,8 +67,8 @@
         </div>
     </div>
 
-     <!-- Modal -->
-     <div id="modal" class="modal">
+    <!-- Modal -->
+    <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="cerrarModal()">&times;</span>
             <h2 id="modal-title"></h2>
@@ -113,7 +113,7 @@
         </div>
     </footer>
 
-   <script>
+    <script>
         function abrirModal(titulo, localidad, condiciones) {
             document.getElementById('modal').style.display = 'block';
             document.getElementById('modal-title').innerText = titulo + ' en ' + localidad;
