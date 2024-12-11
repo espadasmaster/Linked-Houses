@@ -62,8 +62,6 @@
 <div id="details-modal" class="modal">
     <div class="modal-contenido" id="modal-content">
         <div class="modal-texto">
-            <span class="close" onclick="closeDetails()">&times;</span>
-            <h2>Detalles de la propiedad</h2>
         </div>
         <div id="modal-body"></div>
     </div>

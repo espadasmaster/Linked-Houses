@@ -316,6 +316,21 @@ input[type="file"]::file-selector-button:hover {
   background-color: #236cb9;
 }
 
+.cerrar-boton {
+  margin-top: 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 380px;
+}
+
+.cerrar-boton:hover {
+  background-color: #bb2a38;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -333,11 +348,9 @@ input[type="file"]::file-selector-button:hover {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
-  display: flex;
   gap: 20px;
   width: 600px;
   max-width: 500px;
-  position: relative;
 }
 
 .modal-contenido img {
