@@ -62,8 +62,6 @@
 <div id="details-modal" class="modal">
     <div class="modal-contenido" id="modal-content">
         <div class="modal-texto">
-            <span class="close" onclick="closeDetails()">&times;</span>
-            <h2>Detalles de la propiedad</h2>
         </div>
         <div id="modal-body"></div>
     </div>
@@ -90,7 +88,7 @@
                         <li><a href="">Juego</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-cor">
                     <h4>Cualquier duda o consulta, contactanos por nuestras redes</h4>
                     <div class="social-links">
                         <a href=""><i class="fab fa-facebook-f"></i></a>
