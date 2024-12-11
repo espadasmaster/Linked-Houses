@@ -44,6 +44,7 @@
 
     <section class="hero">
         <div class="overlay">
+            <img src="" alt="">
             <h2>La página web es una plataforma digital dedicada a la publicación, compra, venta y alquiler de inmuebles. Está diseñada para facilitar la búsqueda de propiedades para los usuarios, ofreciendo un catálogo diverso que incluye casas, departamentos, terrenos y más. Los propietarios y agentes inmobiliarios pueden crear anuncios con detalles completos sobre las propiedades, incluyendo fotografías, descripción, ubicación, precio y características específicas como el número de habitaciones o el tipo de pago. Los usuarios interesados pueden filtrar los resultados según sus preferencias, como el tipo de inmueble, el rango de precio o la ubicación. Garantizando transparencia y accesibilidad.</h2>
         </div>
     </section>
