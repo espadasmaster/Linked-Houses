@@ -61,7 +61,7 @@
     <!-- Modal para mostrar detalles-->
 <div id="details-modal" class="modal">
     <div class="modal-contenido" id="modal-content">
-        <div class="modal">
+        <div class="modal-texto">
             <span class="close" onclick="closeDetails()">&times;</span>
             <h2>Detalles de la propiedad</h2>
         </div>

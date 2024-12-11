@@ -12,7 +12,7 @@ function showDetails(details) {
         <p><strong>Método de Pago:</strong> ${details['Met-pago']}</p>
         <p><strong>Condiciones:</strong> ${details.Condiciones}</p>
     `;
-    modal.style.display = 'block';
+    modal.style.display = 'flex';
 }
 
 // Función para cerrar el modal
