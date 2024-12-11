@@ -45,7 +45,7 @@
                     echo "<div class='posteo-contenido'>";
                     echo "<h3>" . htmlspecialchars($fila['Tipo']) . " en " . htmlspecialchars($fila['Localidad']) . "</h3>";
                     echo "<p><strong>Ambientes:</strong> " . htmlspecialchars($fila['Cant-ambientes']) . "</p>";
-                    echo "<button class='view-more-btn' onclick='showDetails(".json_encode($fila).")'>Ver más</button>";
+                    echo "<button class='posteo-contenido' onclick='showDetails(".json_encode($fila).")'>Ver más</button>";
                     echo "</div>";
                     echo "</div>";
                 }
@@ -60,8 +60,8 @@
 
     <!-- Modal para mostrar detalles-->
 <div id="details-modal" class="modal">
-    <div class="modal-content" id="modal-content">
-        <div class="modal-header">
+    <div class="modal-contenido" id="modal-content">
+        <div class="modal">
             <span class="close" onclick="closeDetails()">&times;</span>
             <h2>Detalles de la propiedad</h2>
         </div>
