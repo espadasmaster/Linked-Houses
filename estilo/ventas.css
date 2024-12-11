@@ -424,8 +424,8 @@ ul{
     padding: 70px 0;
 }
 .footer-col{
-   width: 25%;
-   padding: 0 15px;
+  width: 25%;
+  padding: 0 15px;
 }
 .footer-col h4{
 	font-size: 18px;
@@ -443,7 +443,7 @@ ul{
 	background-color: #2599bd;
 	height: 2px;
 	box-sizing: border-box;
-	width: 50px;
+	width: 100%;
 }
 
 .footer-col ul li:not(:last-child){
