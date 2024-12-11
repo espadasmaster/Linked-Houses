@@ -303,14 +303,17 @@ input[type="file"]::file-selector-button:hover {
 .posteo-contenido button {
   background-color: #007bff;
   color: white;
-  border: none;
+  margin: 5% auto;
+  border: 1px solid #888;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  max-width: 150px;
+  
 }
 
 .posteo-contenido button:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
 }
 
 .modal {
@@ -332,6 +335,7 @@ input[type="file"]::file-selector-button:hover {
   display: flex;
   gap: 20px;
   width: 600px;
+  max-width: 500px;
 }
 
 .modal-contenido img {
@@ -348,19 +352,49 @@ input[type="file"]::file-selector-button:hover {
   margin-top: 0;
 }
 
-.cerrar-boton {
-  margin-top: 15px;
-  background-color: #dc3545;
+.ver-mas-btn {
+  background-color: #000000;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 15px;
   cursor: pointer;
-  margin-left: 250px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
-.cerrar-boton:hover {
-  background-color: #bb2a38;
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.close-btn {
+  color: black;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: rgb(0, 0, 0);
 }
 
 .posteos-container {

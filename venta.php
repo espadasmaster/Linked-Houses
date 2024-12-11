@@ -52,7 +52,8 @@
                     echo "<p><strong>Fecha:</strong> " . htmlspecialchars($fila['Fecha']) . "</p>";
                     echo "<p><strong>Método de Pago:</strong> " . htmlspecialchars($fila['Met-pago']) . "</p>";
                     echo "<p class='condiciones'><strong>Condiciones:</strong> " . htmlspecialchars($fila['Condiciones']) . "</p>";
-                    
+                    echo "<button class='ver-mas-btn' onclick=\"abrirModal('" . htmlspecialchars($fila['Tipo']) . "', '" . htmlspecialchars($fila['Localidad']) . "', '" . htmlspecialchars($fila['Condiciones']) . "')\">Ver más</button>";
+
                     echo "</div>";
                     echo "</div>";
                 }
@@ -65,6 +66,16 @@
             ?>
         </div>
     </div>
+
+     <!-- Modal -->
+     <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-body"></p>
+        </div>
+    </div>
+
 
     <footer class="footer">
         <div class="container">
@@ -101,6 +112,25 @@
             </div>
         </div>
     </footer>
+
+   <script>
+        function abrirModal(titulo, localidad, condiciones) {
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('modal-title').innerText = titulo + ' en ' + localidad;
+            document.getElementById('modal-body').innerText = 'Condiciones: ' + condiciones;
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>
