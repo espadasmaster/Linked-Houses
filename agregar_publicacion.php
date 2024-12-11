@@ -36,9 +36,9 @@ if (!isset($_SESSION['usuario'])) {
                 <label for="tipo">Tipo de propiedad *</label>
                 <select id="propi" name="propi" required>
                     <option value="">Seleccione...</option>
-                    <option value="casa">Casa</option>
-                    <option value="departamento">Departamento</option>
-                    <option value="terreno">Terreno</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Departamento">Departamento</option>
+                    <option value="Terreno">Terreno</option>
                 </select>
                 
                 <label for="dni_dueño">DNI del dueño *</label>
@@ -53,10 +53,10 @@ if (!isset($_SESSION['usuario'])) {
                 <label for="met_pago">Método de pago *</label>
                 <select id="tipopago" name="tipopago" required>
                     <option value="">Seleccione...</option>
-                    <option value="efectivo">Efectivo</option>
-                    <option value="transferencia">Transferencia</option>
-                    <option value="tarjeta_credito">Tarjeta de Credito</option>
-                    <option value="tarjeta_debito">Tarjeta de Debito</option>           
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
+                    <option value="Tarjeta_credito">Tarjeta de Credito</option>
+                    <option value="Tarjeta_debito">Tarjeta de Debito</option>           
                 </select>
         
                 <label for="condiciones">Condiciones *</label>
