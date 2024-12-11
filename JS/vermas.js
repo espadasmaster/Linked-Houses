@@ -12,6 +12,7 @@ function showDetails(details) {
         <p><strong>Condiciones:</strong> ${details.Condiciones}</p>
         <button id="close-modal-button" style="margin-top: 10px; padding: 5px 10px; background-color: red; color: white; border: none; border-radius: 5px; cursor: pointer;">Cerrar</button>
     `;
+    modal.style.display = 'flex';
 
     const closeButton = modalBody.querySelector('#close-modal-button');
     closeButton.addEventListener('click', closeDetails);
