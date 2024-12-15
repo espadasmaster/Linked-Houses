@@ -26,6 +26,7 @@
             <?php if ($usuarioLogueado): ?>
                 <span>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></span>
                 <button onclick="location.href='logout.php'">Cerrar Sesión</button>
+                <button onclick="location.href=''">Carrito</button>
             <?php else: ?>
                 <button onclick="location.href='login.html'">Iniciar Sesión</button>
                 <button onclick="location.href='registrarse.html'">Registrarse</button>
