@@ -21,6 +21,7 @@
             <?php if ($usuarioLogueado): ?> 
                 <span>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></span> 
                 <button onclick="location.href='logout.php'">Cerrar Sesión</button>
+                <button onclick="location.href=''">Carrito</button>
             <?php else: ?>
                 <button onclick="location.href='login.html'">Iniciar Sesión</button>
                 <button onclick="location.href='registrarse.html'">Registrarse</button>
@@ -80,12 +81,6 @@
                     <h4>Ayuda</h4>
                     <ul>
                         <li><a href="">Soporte</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Tienda Online</h4>
-                    <ul>
-                        <li><a href="">Juego</a></li>
                     </ul>
                 </div>
                 <div class="footer-cor">
