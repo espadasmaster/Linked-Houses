@@ -10,18 +10,35 @@ function showDetails(details) {
         <p><strong>Fecha:</strong> ${details.Fecha}</p>
         <p><strong>Método de Pago:</strong> ${details['Met-pago']}</p>
         <p><strong>Condiciones:</strong> ${details.Condiciones}</p>
+        <button id="contact-owner-button" class="contactar-boton">Contactar al Dueño</button>
         <button id="close-modal-button" class="cerrar-boton">Cerrar</button>
     `;
     modal.style.display = 'flex';
 
+    // Agregar funcionalidad al botón de cerrar
     const closeButton = modalBody.querySelector('#close-modal-button');
     closeButton.addEventListener('click', closeDetails);
 
-    modal.style.display = 'flex';
+    // Agregar funcionalidad al botón de contactar
+    const contactButton = modalBody.querySelector('#contact-owner-button');
+    contactButton.addEventListener('click', () => {
+        contactarDueno(details.Mail);
+    });
 }
+
+
+
+
 
 // Función para cerrar el modal
 function closeDetails() {
     const modal = document.getElementById('details-modal');
     modal.style.display = 'none';
+}
+
+// Función para contactar al dueño
+function contactarDueno(mail) {
+    const subject = encodeURIComponent("Interés en tu publicación");
+    const body = encodeURIComponent("Hola, estoy interesado en tu propiedad publicada. ¿Podrías darme más detalles?");
+    window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
 }
