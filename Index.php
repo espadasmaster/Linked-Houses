@@ -90,13 +90,13 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Ayuda</h4>
+                    <h4>Numero de contacto</h4>
                     <ul>
-                        <li><a href="">Soporte</a></li>
+                        <li><a>+54 11 2624-8040</a></li>
                     </ul>
                 </div>
                 <div class="footer-cor">
-                    <h4>Cualquier duda o consulta, contactanos por nuestras redes</h4>
+                    <h4>Contactanos por nuestras redes</h4>
                     <div class="social-links">
                         <a href=""><i class="fab fa-facebook-f"></i></a>
                         <a href=""><i class="fab fa-twitter"></i></a>
