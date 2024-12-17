@@ -29,7 +29,6 @@ function showDetails(details) {
     });
 }
 
-
 // Función para cerrar el modal
 function closeDetails() {
     const modal = document.getElementById('details-modal');
