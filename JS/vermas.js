@@ -5,6 +5,7 @@ function showDetails(details) {
 
     modalBody.innerHTML = `
         <h2>${details.Tipo} en ${details.Localidad}</h2>
+        <br>
         <img src="${details.Imagen}" alt="Imagen" style="max-width: 100%; height: auto;">
         <p><strong>Ambientes:</strong> ${details['Cant-ambientes']}</p>
         <p><strong>Fecha:</strong> ${details.Fecha}</p>
