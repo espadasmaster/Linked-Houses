@@ -6,6 +6,7 @@ function showDetails(details) {
     // Generar contenido del modal
     modalBody.innerHTML = `
         <h2>${details.Tipo} en ${details.Localidad}</h2>
+        <br>
         <img src="${details.Imagen}" alt="Imagen" style="max-width: 100%; height: auto;">
         <p><strong>Ambientes:</strong> ${details['Cant-ambientes']}</p>
         <p><strong>Fecha:</strong> ${details.Fecha}</p>
@@ -30,7 +31,6 @@ function showDetails(details) {
         contactarDueno(details.MailUsuario, details.idPublicacion); // Pasar mail y ID de publicación
     });
 }
-
 
 // Función para cerrar el modal
 function closeDetails() {
