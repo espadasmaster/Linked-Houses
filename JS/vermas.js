@@ -12,6 +12,7 @@ function showDetails(details) {
         <p><strong>Fecha:</strong> ${details.Fecha}</p>
         <p><strong>Método de Pago:</strong> ${details['Met-pago']}</p>
         <p><strong>Condiciones:</strong> ${details.Condiciones}</p>
+        <p><strong>Email del dueño:</strong> ${details['MailUsuario']}</p>
         <div class="botones-container">
             <button id="contact-owner-button" class="contactar-boton">Contactar al Dueño</button>
             <button id="close-modal-button" class="cerrar-boton">Cerrar</button>
