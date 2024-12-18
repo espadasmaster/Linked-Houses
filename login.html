@@ -7,6 +7,7 @@
     <title>Iniciar sesion</title>
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="estilo/estilo_1.css">
+    <script src="JS/loginmen.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
@@ -15,28 +16,31 @@
         <a href="Index.php"><img src="logo_boceto.PNG" alt="Logo"></a>
         
         </div>
-    <section class="background">
-        <div class="contenedor">
-            <div class="formulario">
-                <form id="form1" action="login.php" method="post">
-                    <h2>Iniciar sesión</h2>
-
-                    <div class="input-contenedor">
-                        <input type="text" placeholder="Usuario" name="usuario" required>
-                    </div>
-
-                    <div class="input-contenedor">
-                        <input type="password" placeholder="Contraseña" name="Contraseña" required>
-                    </div>
-                    <button type="submit" class="boton">Iniciar sesión</button>
-                    <br>
-                    <br>
-                    <p class="crear-cuenta">No tenes una cuenta? <a href="registrarse.html">Registrate</a></p>
-                </form>
+        <section class="background">
+            <div class="contenedor">
+                <div class="formulario">
+                    <form id="login-form" method="post">
+                        <h2>Iniciar sesión</h2>
+        
+                        <div class="input-contenedor">
+                            <input type="text" id="usuario" placeholder="Usuario" name="usuario" required>
+                        </div>
+        
+                        <div class="input-contenedor">
+                            <input type="password" id="contraseña" placeholder="Contraseña" name="Contraseña" required>
+                        </div>
+                        
+                        <button type="button" class="boton" id="login-btn">Iniciar sesión</button>
+                        <br><br>
+                        <p class="crear-cuenta">No tenes una cuenta? <a href="registrarse.html">Registrate</a></p>
+                        <!-- Mensaje de error -->
+                        <p id="error-message" style="color: red; display: none;"></p>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    <script src="JS/loginmen.js"></script>
+        
     <footer class="footer">
         <div class="container">
             <div class="row">

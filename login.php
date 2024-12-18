@@ -1,37 +1,50 @@
-<?php 
+<?php
 include_once 'conex/cn.php';
+session_start();
 
-// Obtener datos del formulario
-$usuario = $_POST['usuario'];
-$contraseña = $_POST['Contraseña'];
+header("Content-Type: application/json");
+
+// Leer los datos enviados por el cliente
+$input = json_decode(file_get_contents('php://input'), true);
+
+$usuario = $input['usuario'] ?? '';
+$contraseña = $input['Contraseña'] ?? '';
+
+// Validar que ambos campos estén completos
+if (empty($usuario) || empty($contraseña)) {
+    echo json_encode(['success' => false, 'error' => 'Por favor, completa todos los campos.']);
+    exit();
+}
 
 // Evitar inyecciones SQL
 $usuario = $conexdb->real_escape_string($usuario);
 $contraseña = $conexdb->real_escape_string($contraseña);
 
-// Consultar base de datos
+// Consultar la base de datos
 $sql = "SELECT * FROM usuario WHERE Usuario = '$usuario'";
 $result = $conexdb->query($sql);
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    // Verificamos la contraseña
+
+    // Verificar la contraseña
     if (password_verify($contraseña, $row['Contra'])) {
-        // Si todo es correcto, iniciamos la sesión
-        session_start();
-        $_SESSION['usuario'] = $usuario; // Guardamos el nombre de usuario o ID
-        $_SESSION['nombre'] = $row['Nombre']; // Guardamos el nombre del usuario
-        
-        header("Location: venta.php"); // Cambia a la página principal o de usuario
-        exit();
+        // Autenticación exitosa: Iniciar sesión y guardar datos del usuario
+        $_SESSION['usuario'] = $usuario;
+        $_SESSION['nombreUsuario'] = $row['Nombre'];
+        $_SESSION['correoUsuario'] = $row['Mail'];
+
+        // Devolver respuesta exitosa
+        echo json_encode(['success' => true, 'message' => 'Inicio de sesión exitoso.']);
     } else {
         // Contraseña incorrecta
-        echo "<script>alert('Contraseña incorrecta'); window.location.href='login.html';</script>";
+        echo json_encode(['success' => false, 'error' => 'Contraseña incorrecta.']);
     }
 } else {
     // Usuario no encontrado
-    echo "<script>alert('Usuario no encontrado'); window.location.href='login.html';</script>";
+    echo json_encode(['success' => false, 'error' => 'Usuario no encontrado.']);
 }
 
 $conexdb->close();
 ?>
+

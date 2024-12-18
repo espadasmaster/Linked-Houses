@@ -21,7 +21,7 @@
             <?php if ($usuarioLogueado): ?> 
                 <span>Bienvenido, <?php echo htmlspecialchars($nombreUsuario); ?></span> 
                 <button onclick="location.href='logout.php'">Cerrar Sesión</button>
-                <button onclick="location.href=''">Carrito</button>
+                <button onclick="location.href='seguimiento_contactos.php'">Seguimiento</button>
             <?php else: ?>
                 <button onclick="location.href='login.html'">Iniciar Sesión</button>
                 <button onclick="location.href='registrarse.html'">Registrarse</button>
@@ -33,29 +33,31 @@
         <h1 class="subtitulo">Lista de Propiedades</h1>
         <button class="add-publication-btn" onclick="location.href='agregar_publicacion.php'">Agregar Publicación +</button>
         <div id="property-list" class="property-list">
-            <?php
-            include "conex/cn.php";
+        <?php
+include "conex/cn.php";
 
-            $sql = "SELECT Localidad, Tipo, `Dni-dueño`, `Cant-ambientes`, Fecha, `Met-pago`, Condiciones, Imagen FROM publicaciones";
-            $resultado = $conexdb->query($sql);
+$sql = "SELECT idPublicacion, Localidad, Tipo, `Dni-dueño`, `Cant-ambientes`, Fecha, `Met-pago`, Condiciones, Imagen, MailUsuario FROM publicaciones";
+$resultado = $conexdb->query($sql);
 
-            if ($resultado->num_rows > 0) {
-                while ($fila = $resultado->fetch_assoc()) {
-                    echo "<div class='posteo'>";
-                    echo "<img src='" . htmlspecialchars($fila['Imagen']) . "' alt='Imagen'>";
-                    echo "<div class='posteo-contenido'>";
-                    echo "<h3>" . htmlspecialchars($fila['Tipo']) . " en " . htmlspecialchars($fila['Localidad']) . "</h3>";
-                    echo "<p><strong>Ambientes:</strong> " . htmlspecialchars($fila['Cant-ambientes']) . "</p>";
-                    echo "<button class='posteo-contenido' onclick='showDetails(".json_encode($fila).")'>Ver más</button>";
-                    echo "</div>";
-                    echo "</div>";
-                }
-            } else {
-                echo "<p>No se encontraron publicaciones.</p>";
-            }
+if ($resultado->num_rows > 0) {
+    while ($fila = $resultado->fetch_assoc()) {
+        echo "<div class='posteo'>";
+        echo "<img src='" . htmlspecialchars($fila['Imagen']) . "' alt='Imagen'>";
+        echo "<div class='posteo-contenido'>";
+        echo "<h3>" . htmlspecialchars($fila['Tipo']) . " en " . htmlspecialchars($fila['Localidad']) . "</h3>";
+        echo "<p><strong>Ambientes:</strong> " . htmlspecialchars($fila['Cant-ambientes']) . "</p>";
+       
+        echo "<button class='posteo-contenido' onclick='showDetails(".json_encode($fila).")'>Ver más</button>";
+        echo "</div>";
+        echo "</div>";
+    }
+} else {
+    echo "<p>No se encontraron publicaciones.</p>";
+}
 
-            $conexdb->close();
-            ?>
+$conexdb->close();
+?>
+
         </div>
     </div>
 
