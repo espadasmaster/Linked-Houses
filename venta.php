@@ -69,6 +69,7 @@ $conexdb->close();
         <div id="modal-body"></div>
     </div>
 </div>
+<br>
 
     <footer class="footer">
         <div class="container">
