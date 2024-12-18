@@ -720,7 +720,7 @@ table tr:hover {
   transition: 0.3s;
 }
 
-.table p {
+ .texto-tabla {
   text-align: center;
   font-size: 1.2rem;
   color: #666;

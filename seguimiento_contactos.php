@@ -57,7 +57,7 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
             }
             echo "</table>";
         } else {
-            echo "<p>No tienes contactos registrados.</p>";
+            echo "<p class='texto-tabla'>No tienes contactos registrados.</p>";
         }
 
         $stmt->close();
