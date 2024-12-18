@@ -35,10 +35,11 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
         <h1>Historial de Contactos</h1>
         <?php
         // Consulta para obtener los contactos del usuario
-        $sql = "SELECT c.FechaContacto, c.EmailDueno, p.Localidad, p.Tipo, c.PublicacionId 
-                FROM contactos c 
-                INNER JOIN publicaciones p ON c.PublicacionId = p.idPublicacion 
-                WHERE c.Usuario = ?";
+        $sql = "SELECT c.FechaContacto, c.EmailDueno, p.Localidad, p.Tipo, c.PublicacionId, p.Imagen 
+        FROM contactos c 
+        INNER JOIN publicaciones p ON c.PublicacionId = p.idPublicacion 
+        WHERE c.Usuario = ?";
+
         $stmt = $conexdb->prepare($sql);
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
@@ -46,17 +47,25 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
 
         if ($result->num_rows > 0) {
             echo "<table>";
-            echo "<tr><th>Fecha de Contacto</th><th>Email del Dueño</th><th>Localidad</th><th>Tipo de Propiedad</th><th>Acciones</th></tr>";
+            echo "<tr><th>Foto de la casa</th><th>Fecha de Contacto</th><th>Email del Dueño</th><th>Localidad</th><th>Tipo de Propiedad</th><th>Acciones</th></tr>";
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <td>" . htmlspecialchars($row['FechaContacto']) . "</td>
-                        <td>" . htmlspecialchars($row['EmailDueno']) . "</td>
-                        <td>" . htmlspecialchars($row['Localidad']) . "</td>
-                        <td>" . htmlspecialchars($row['Tipo']) . "</td>
-                        <td>
-                            <button class='delete-btn' data-id='" . htmlspecialchars($row['PublicacionId']) . "'>Eliminar</button>
-                        </td>
-                      </tr>";
+        <td>";
+if (!empty($row['Imagen'])) {
+    echo "<img src='" . htmlspecialchars($row['Imagen']) . "' alt='Foto de la casa' style='width:150px; height:auto;'>";
+} else {
+    echo "Sin imagen";
+}
+echo "</td>
+        <td>" . htmlspecialchars($row['FechaContacto']) . "</td>
+        <td>" . htmlspecialchars($row['EmailDueno']) . "</td>
+        <td>" . htmlspecialchars($row['Localidad']) . "</td>
+        <td>" . htmlspecialchars($row['Tipo']) . "</td>
+        <td>
+            <button class='delete-btn' data-id='" . htmlspecialchars($row['PublicacionId']) . "'>Eliminar</button>
+        </td>
+    </tr>";
+
             }
             echo "</table>";
         } else {
