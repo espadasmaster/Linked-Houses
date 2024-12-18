@@ -2,7 +2,6 @@
 include "conex/cn.php"; // Archivo de conexión a la base de datos
 session_start();
 
-
 if (!isset($_SESSION['correoUsuario'])) {
     $_SESSION['mensaje_error'] = "Necesitas estar logueado para acceder a esta página.";
     header("Location: login.html");
@@ -21,6 +20,7 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
     <link rel="shortcut icon" type="image/x-icon" href="logo.png">
     <link rel="stylesheet" href="estilo/ventas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script defer src="JS/eliminarContacto.js"></script>
 </head>
 <body>
     <div class="navbar">
@@ -35,7 +35,7 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
         <h1>Historial de Contactos</h1>
         <?php
         // Consulta para obtener los contactos del usuario
-        $sql = "SELECT c.FechaContacto, c.EmailDueno, p.Localidad, p.Tipo 
+        $sql = "SELECT c.FechaContacto, c.EmailDueno, p.Localidad, p.Tipo, c.PublicacionId 
                 FROM contactos c 
                 INNER JOIN publicaciones p ON c.PublicacionId = p.idPublicacion 
                 WHERE c.Usuario = ?";
@@ -46,13 +46,16 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
 
         if ($result->num_rows > 0) {
             echo "<table>";
-            echo "<tr><th>Fecha de Contacto</th><th>Email del Dueño</th><th>Localidad</th><th>Tipo de Propiedad</th></tr>";
+            echo "<tr><th>Fecha de Contacto</th><th>Email del Dueño</th><th>Localidad</th><th>Tipo de Propiedad</th><th>Acciones</th></tr>";
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
                         <td>" . htmlspecialchars($row['FechaContacto']) . "</td>
                         <td>" . htmlspecialchars($row['EmailDueno']) . "</td>
                         <td>" . htmlspecialchars($row['Localidad']) . "</td>
                         <td>" . htmlspecialchars($row['Tipo']) . "</td>
+                        <td>
+                            <button class='delete-btn' data-id='" . htmlspecialchars($row['PublicacionId']) . "'>Eliminar</button>
+                        </td>
                       </tr>";
             }
             echo "</table>";
@@ -64,23 +67,6 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
         $conexdb->close();
         ?>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
     <footer class="footer">
         <div class="container">
