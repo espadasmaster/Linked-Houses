@@ -46,7 +46,7 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
 
         if ($result->num_rows > 0) {
             echo "<table>";
-            echo "<tr><th>Fecha de Contacto</th><th>Email del Dueño</th><th>Localidad</th><th>Tipo de Propiedad</th><th>Acciones</th></tr>";
+            echo "<tr><th>Fecha de Contacto</th><th>Email del Dueño</th><th>Localidad</th><th>Tipo de Propiedad</th><th>Eliminar</th></tr>";
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
                         <td>" . htmlspecialchars($row['FechaContacto']) . "</td>
@@ -67,7 +67,18 @@ $usuario = $_SESSION['correoUsuario']; // Correo del usuario autenticado
         $conexdb->close();
         ?>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <footer class="footer">
         <div class="container">
             <div class="row">
