@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         email: document.getElementById("email-error"),
         contraseña: document.getElementById("contraseña-error"),
     };
-
-    // Funciones de validación
+    //trim elimina espacios en blancou
+    // Funciones de validaciónnnnn
     function validarUsuario() {
         if (usuario.value.trim() === "") {
             errores.usuario.textContent = "El campo Usuario no puede estar vacío.";
@@ -51,10 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function validarEmail() {
-        if (!/^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/.test(email.value)) {
-            errores.email.textContent = "Por favor, ingrese un correo electrónico válido.";
+        if (!/^[\w.-]+@(gmail|yahoo|hotmail)\.com$/.test(email.value)) {
+            errores.email.textContent = "El correo debe ser de los dominios permitidos: gmail, yahoo o hotmail.";
         } else {
-            errores.email.textContent = "";
+            errores.email.textContent = ""; 
         }
     }
 
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     email.addEventListener("blur", validarEmail);
     contraseña.addEventListener("blur", validarContraseña);
 
-    // Validar todos los campos al enviar el formulario
+    // validamos todos los campos al enviar el formulario
     form.addEventListener("submit", (e) => {
         validarUsuario();
         validarNombre();
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         validarEmail();
         validarContraseña();
 
-        // Evitar envío si hay errores
+        // si hay errorres no se envia
         if (
             errores.usuario.textContent ||
             errores.nombre.textContent ||

@@ -76,7 +76,18 @@ echo "</td>
         $conexdb->close();
         ?>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <footer class="footer">
         <div class="container">
             <div class="row">
