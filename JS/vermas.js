@@ -55,7 +55,7 @@ function contactarDueno(mail, publicacionId) {
             const body = encodeURIComponent("Hola, estoy interesado en tu propiedad publicada. ¿Podrías darme más detalles?");
             window.location.href = `mailto:${mail}?subject=${subject}&body=${body}`;
         } else {
-            alert("Hubo un error al registrar el contacto.");
+            alert("Necesita estar logueado para registrar el contacto.");
         }
     })
     .catch(error => {
